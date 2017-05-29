@@ -16,6 +16,7 @@ so
     }
 
 becomes
+
     for f := range res.Main {
         f()
     }
