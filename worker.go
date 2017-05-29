@@ -16,14 +16,10 @@ func New(n int) WG {
 
 	for i := 0; i < n; i++ {
 		go func() {
-			for {
-				f := <-res.main
-				if f == nil {
-					procDone <- true
-					return
-				}
+			for f := range res.main {
 				f()
 			}
+			procDone <- true
 		}()
 	}
 
