@@ -1,7 +1,6 @@
 package workers
 
 type WG struct {
-	max     int
 	allDone chan bool
 	main    chan func()
 }
